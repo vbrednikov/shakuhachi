@@ -44,7 +44,7 @@ $ ./shaku.py -n 5 -c 4
 
 It also  can write names instead if symbols:
 ```
-./shaku.py -n 3 -c 7 --names
+$ ./shaku.py -n 3 -c 7 --names
 i   i   i   re  tsu ro  re
 tsu chi re  ro  ri  tsu ri
 i   ri  i   ro  re  tsu ro
@@ -57,11 +57,11 @@ To add possibility to generate pdfs, I used docker.
 To build the image with xetex and some [Google free Noto fonts ](https://www.google.com/get/noto/) [for CJK](https://github.com/googlei18n/noto-cjk) onboard:
 
 ```
-docker build -t vbrednikov/jlatex .
+$ docker build -t vbrednikov/jlatex .
 ```
 
 To run `xelatex` from inside the image with sample tex file:
 
 ```
-docker run -v `pwd`:/work --rm vbrednikov/jlatex xelatex example.pdf
+$ docker run -v `pwd`:/work --rm vbrednikov/jlatex xelatex example.pdf
 ```
