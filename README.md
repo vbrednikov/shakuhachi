@@ -7,18 +7,39 @@ them in written order, to get familiar with the names and symbols.
 
 Instead of this, I spent several hours automating it with python and latex.
 
-1. Python script is pretty simple. Without arguments, it just generates 15 random
-pairs:
+## Python script
+
+Python script `shaku.py` is pretty simple. Without arguments, it just generates 15 random
+pairs (vertical RTL alignment is TBD, but it's ok to play it in this manner):
 
 ```
 $ ./shaku.py
+リ ツ
+ハ ツ
+ハ リ
+レ レ
+リ チ
+ロ ロ
+ロ ツ
+リ ロ
+チ リ
+チ チ
+チ レ
+ハ リ
+ハ ツ
+ハ ロ
+チ ロ
 ```
 
 It also accepts some parameters: -n is number of sequences and -c is number of
 notes in a sequences.
 ```
 $ ./shaku.py -n 5 -c 4
-TBD
+ロ チ リ ツ
+ハ ロ ツ リ
+ツ レ チ チ
+ツ レ チ リ
+ロ リ ハ チ
 ```
 
 It also  can write names instead if symbols:
@@ -27,4 +48,20 @@ It also  can write names instead if symbols:
 i   i   i   re  tsu ro  re
 tsu chi re  ro  ri  tsu ri
 i   ri  i   ro  re  tsu ro
+```
+
+## Xetex/Latex
+
+To add possibility to generate pdfs, I used docker.
+
+To build the image with xetex and some [Google free Noto fonts ](https://www.google.com/get/noto/) [for CJK](https://github.com/googlei18n/noto-cjk) onboard:
+
+```
+docker build -t vbrednikov/jlatex .
+```
+
+To run `xelatex` from inside the image with sample tex file:
+
+```
+docker run -v `pwd`:/work --rm vbrednikov/jlatex xelatex example.pdf
 ```
