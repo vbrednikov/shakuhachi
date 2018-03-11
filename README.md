@@ -60,7 +60,7 @@ To build the image with xetex and some [Google free Noto fonts ](https://www.goo
 $ docker build -t vbrednikov/jlatex .
 ```
 
-To run `xelatex` from inside the image with sample tex file:
+To run `xelatex` from inside the image with sample tex file (original sample taken from [this famous page](https://nablux.net/tgp/weblog/2013/03/22/how-typeset-japanese-using-xelatex/)):
 
 ```
 $ docker run -v `pwd`:/work --rm vbrednikov/jlatex xelatex example.pdf
