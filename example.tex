@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+
+\usepackage{xltxtra, setspace}
+
+%% fonts
+
+% xeCJK options from &lt;http://mesokosmos.blogger.de/stories/1818274/&gt;:
+\usepackage[%
+  boldfont,
+  CJKnumber,
+  CJKchecksingle
+]{xeCJK}
+
+\setCJKmainfont[Script=CJK]{Noto Sans Mono CJK JP Bold}
+
+%  font needs to come with ``vrt2'' feature
+\setCJKfamilyfont{cjk-vert}[Script=CJK,RawFeature=vertical]{Noto Sans Mono CJK JP Bold}
+
+
+%% alignment
+
+% also from &lt;http://mesokosmos.blogger.de/stories/1818274/&gt;:
+%\XeTeXlinebreaklocale "ja"
+\XeTeXlinebreakskip=0em plus 0.1em minus 0.01em
+% we also drop paragraph indentation in order to get proper alignment
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{figure}[h!]
+\begin{center}
+\rotatebox{-90}{
+\begin{minipage}{0.35\textwidth}
+\CJKfamily{cjk-vert}
+\onehalfspacing
+ロ チ リ ツ　
+
+ハ ロ ツ リ　
+
+ツ レ チ チ　
+
+ツ レ チ リ　
+
+ロ リ ハ チ　
+
+\end{minipage}
+}
+\end{center}
+\end{figure}
+
+
+\end{document}
